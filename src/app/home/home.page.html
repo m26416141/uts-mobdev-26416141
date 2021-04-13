@@ -24,31 +24,44 @@
     </p>
   </div> -->
 
-  <ion-card>
+  <ion-card style="margin-bottom: 20px">
     <ion-card-header style="margin-bottom: 20px">
-      <ion-card-title> Tambah Notes: </ion-card-title>
+      <ion-card-subtitle> Tambah Notes: </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
       <ion-card-subtitle> Judul Notes: </ion-card-subtitle>
       <ion-input [(ngModel)]="Judul"></ion-input>
       <ion-card-subtitle> Isi Notes: </ion-card-subtitle>
       <ion-input [(ngModel)]="Isi"></ion-input>
-      <ion-button (click)="save()">SAVE</ion-button>
+      <ion-card-subtitle>Tanggal Notes:</ion-card-subtitle>
+      <ion-datetime
+        class="ion-no-padding date-pick"
+        placeholder="Pilih Tanggal"
+      ></ion-datetime>
+      <ion-button expand="block" (click)="save()">SAVE</ion-button>
     </ion-card-content>
   </ion-card>
 
+  <ion-item lines="none" class="ion-no-padding list-title">
+    <ion-label>List notes</ion-label>
+  </ion-item>
+
   <div class="ion-no-padding">
-    <ion-list>
-      <ion-item class="ion-no-padding" *ngFor="let item of isiData | async">
-        <ion-label>{{item.judul}}</ion-label>
-        <ion-label>{{item.isi}}</ion-label>
-      </ion-item>
+    <ion-list style="padding-bottom: 20px">
+      <ion-card class="list-card" *ngFor="let item of isiData | async">
+        <ion-card-header>
+          <ion-card-subtitle>{{item.judul}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-label>{{item.isi}}</ion-label>
+        </ion-card-content>
+      </ion-card>
     </ion-list>
   </div>
 
-  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+  <!-- <ion-fab horizontal="end" vertical="bottom" slot="fixed">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
-  </ion-fab>
+  </ion-fab> -->
 </ion-content>

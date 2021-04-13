@@ -25,3 +25,38 @@
 #container a {
   text-decoration: none;
 }
+
+ion-card {
+  box-shadow: none !important;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d4d4d4;
+  margin-bottom: 0px;
+}
+
+.list-title {
+  margin-left: 16px;
+  margin-right: 16px;
+  font-size: 16pt;
+  font-weight: 700;
+}
+
+.list-card {
+  margin-top: 10px !important;
+}
+
+ion-input {
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: aqua;
+  margin-bottom: 20px;
+}
+
+.date-pick {
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: aqua;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
