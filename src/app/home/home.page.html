@@ -37,6 +37,7 @@
       <ion-datetime
         class="ion-no-padding date-pick"
         placeholder="Pilih Tanggal"
+        [(ngModel)]="Tanggal"
       ></ion-datetime>
       <ion-button expand="block" (click)="save()">SAVE</ion-button>
     </ion-card-content>
@@ -53,7 +54,7 @@
           <ion-card-subtitle>{{item.judul}}</ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>
-          <ion-label>{{item.isi}}</ion-label>
+          <ion-label>{{item.tanggal | date: 'dd/MM/yyyy'}}</ion-label>
         </ion-card-content>
       </ion-card>
     </ion-list>
